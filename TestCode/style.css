@@ -46,11 +46,23 @@ body{
     border: 1px solid black inset;
     border-radius: 15px;
     box-shadow: 2px 2px 2px 2px rgb(119, 119, 119);
-    padding: 100px;
+    padding: 80px;
     margin: 10px 20px;
+    display: flex;
 }
 
-.panel:hover {
+#panel img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+#paneltext {
+    margin: 0 0 0 20px;
+    align-self: center;
+}
+
+#panel:hover {
     transform: scale(1.01);
 }
 

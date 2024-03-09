@@ -1,97 +1,49 @@
-// Initialize an array to store items
-var itemsArray = [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Item List</h1>
+      </header>
+    
+      <div id="mainContainer">
+        <input type="text" id="searchInput" oninput="updatePanelContainer(this.value)" placeholder="Search items...">
+<button id="clearButton" onclick="clearSearch()">Clear</button>
 
-function showAddItemForm() {
-  document.getElementById('addItemForm').style.display = 'block';
-}
-
-function addItem() {
-  var title = document.getElementById('title').value;
-  var description = document.getElementById('description').value;
-  var imageInput = document.getElementById('image');
-  var image = imageInput.files[0];
-
-  if (!title || !description || !image) {
-    alert('Please fill in all fields');
-    return;
-  }
-
-  // Create an object for the new item
-  var newItem = {
-    title: title,
-    description: description,
-    image: URL.createObjectURL(image)
-  };
-
-  // Add the new item to the array
-  itemsArray.push(newItem);
-
-  // Update the panelContainer with the new items
-  updatePanelContainer();
-
-  // Reset form fields
-  document.getElementById('title').value = '';
-  document.getElementById('description').value = '';
-  imageInput.value = '';
-
-  // Hide the form
-  document.getElementById('addItemForm').style.display = 'none';
-}
-
-document.getElementById('searchInput').addEventListener('keyup', function (event) {
-  if (event.key === 'Enter') {
-    searchItems();
-  }
-});
-
-function searchItems() {
-  var searchInput = document.getElementById('searchInput').value.toLowerCase();
-
-  // Filter items based on the search input
-  var filteredItems = itemsArray.filter(function (item) {
-    return item.title.toLowerCase().includes(searchInput) ||
-      item.description.toLowerCase().includes(searchInput);
-  });
-
-  updatePanelContainer(filteredItems);
-}
-
-function updatePanelContainer(searchInput = '') {
-  var panelContainer = document.getElementById('panelContainer');
-  // Clear existing panels
-  panelContainer.innerHTML = '';
-
-  // Filter items based on the search input
-  var filteredItems = itemsArray.filter(function (item) {
-    return item.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchInput.toLowerCase());
-  });
-
-  // Loop through the filteredItems and create panels
-  filteredItems.forEach(function (item) {
-    var panelItem = document.createElement('div');
-    panelItem.className = 'panel';
-    panelItem.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
-      <div class="panel-content">
-        <h2>${item.title}</h2>
-        <p>${item.description}</p>
+        <button id="searchButton" onclick="searchItems()">Search</button>
+        <div id="panelContainer">
+          <!-- Your panels go here -->
+        </div>
       </div>
-    `;
-    panelContainer.appendChild(panelItem);
-  });
-}
-
-function clearSearch() {
-  document.getElementById('searchInput').value = '';
-  updatePanelContainer(); // Update with the original itemsArray to show all items
-}
-
-
-function cancelAddItem() {
-  document.getElementById('title').value = '';
-  document.getElementById('description').value = '';
-  document.getElementById('image').value = '';
-
-  document.getElementById('addItemForm').style.display = 'none';
-}
+    
+      <div id="sidebar">
+        <h2>Sidebar</h2>
+        <div id="sidebar-item">Example Item 1</div>
+        <div id="sidebar-item">Example Item 2</div>
+        <!-- Add more sidebar items as needed -->
+      </div>
+    
+      <button id="addButton" onclick="showAddItemForm()">Add Item</button>
+    
+      <div id="addItemForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+    
+        <label for="description">Description:</label>
+        <textarea id="description" required></textarea>
+    
+        <label for="image">Profile Picture:</label>
+        <input type="file" id="image" accept="image/*" required>
+    
+        <button onclick="addItem()">Add Item</button>
+        <button class="cancel" onclick="cancelAddItem()">Cancel</button>
+      </div>
+    
+</body>
+<script src="script.js"></script>
+</html>

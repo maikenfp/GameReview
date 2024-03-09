@@ -40,8 +40,7 @@ body{
     margin: 0 20px 0 auto;
     align-self: center;
 }
-
-#panel {
+.panel {
     grid-row: 2;
     border: 1px solid black inset;
     border-radius: 15px;
@@ -51,18 +50,18 @@ body{
     display: flex;
 }
 
-#panel img {
+.panel img {
     border-radius: 50%;
     height: 120px;
     width: 120px;
 }
 
-#paneltext {
-    margin: 0 0 0 20px;
+.panel-content {
+    margin: 0 0 0 50px;
     align-self: center;
 }
 
-#panel:hover {
+.panel:hover {
     transform: scale(1.01);
 }
 
@@ -71,3 +70,29 @@ body{
     grid-column: 1/2;
     width: 100%;
 }
+
+#addItemForm {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 2;
+  }
+
+  #addItemForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #addItemForm input,
+  #addItemForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }

@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+  }
+
+  header {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  #mainContainer {
+    grid-row: 2;
+    grid-column: 2; /* Adjusted to span 1 column */
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #panelContainer {
+    margin: 70px 20px;
+  }
+
+  .panel {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Panel stretches to fill the row */
+    transition: transform 0.2s;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .panel:hover {
+    transform: translateY(-5px);
+  }
+
+  .panel-title {
+    text-align: center;
+    color: #333;
+    margin: 0;
+  }
+
+  .panel img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 20px;
+  }
+
+  .panel-content {
+    padding: 15px;
+    flex: 1;
+  }
+
+  .panel-content h2 {
+    margin-top: 0;
+  }
+
+  #sidebar {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: #5d5d5d;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #sidebar h2 {
+    margin-bottom: 20px;
+  }
+
+  #sidebar-item {
+    margin-bottom: 10px;
+  }
+
+  #addButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #addItemForm {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 2;
+  }
+
+  #addItemForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #addItemForm input,
+  #addItemForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  #addItemForm button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #addItemForm button.cancel {
+    background-color: #ddd;
+    margin-right: 10px;
+  }
+
+  #searchInput {
+    width: 50%; /* Adjust the width as needed */
+    padding: 8px; /* Adjust the padding as needed */
+    box-sizing: border-box;
+    margin: 10px 0; /* Adjust the margin as needed */
+    position: absolute;
+    left: 40%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+  }
+  
+  #searchButton {
+    width: 10%; /* Adjust the width as needed */
+    padding: 10px; /* Adjust the padding as needed */
+    box-sizing: border-box;
+    margin: 10px 400px; /* Adjust the margin as needed */
+    position: absolute;
+    right: 0; /* Position it at the right of the container */
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Rounded corners on the right */
+  }
+
+  #clearButton {
+    position: absolute;
+    right: 580px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Rounded corners on the right */
+  }
+
+  #clearButton:hover, #searchButton:hover {
+    background-color: #45a049; /* Darken the background on hover */
+  }

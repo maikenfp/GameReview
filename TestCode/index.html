@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header class="header">
-
+            <h1>My Games</h1>
         </header>
         <main class="main">
             <div class="mainheader">
@@ -26,24 +26,31 @@
                     <p id="description">Hei</p>
                 </div>-->
             </div>
+            <div id="addItemForm">
+                <input type="text" id="title" required placeholder="Title">
+            
+                <textarea id="description" required placeholder="Description"></textarea>
+            
+                <label for="image">Profile Picture:</label>
+                <input type="file" id="image" required>
+                
+                <div class="formBtnContainer">
+                    <button class="addItemBtn" onclick="addItem()">Add Item</button>
+                    <button class="cancel" onclick="cancelAddItem()">Cancel</button>
+                </div>
+              </div>
         </main>
         <sidebar class="sidebar">
-
+            <div class="rating-stars">
+                <input type="radio" name="rating" id="rs0" checked><label for="rs0"></label>
+                <input type="radio" name="rating" id="rs1"><label for="rs1"></label>
+                <input type="radio" name="rating" id="rs2"><label for="rs2"></label>
+                <input type="radio" name="rating" id="rs3"><label for="rs3"></label>
+                <input type="radio" name="rating" id="rs4"><label for="rs4"></label>
+                <input type="radio" name="rating" id="rs5"><label for="rs5"></label>
+                <span class="rating-counter"></span>
+            </div>
         </sidebar>
-
-        <div id="addItemForm">
-            <label for="title">Title:</label>
-            <input type="text" id="title" required>
-        
-            <label for="description">Description:</label>
-            <textarea id="description" required></textarea>
-        
-            <label for="image">Profile Picture:</label>
-            <input type="file" id="image" required>
-        
-            <button onclick="addItem()">Add Item</button>
-            <button class="cancel" onclick="cancelAddItem()">Cancel</button>
-          </div>
     </div>
 </body>
 <script src="script.js"></script>

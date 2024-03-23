@@ -10,10 +10,10 @@ function addItem() {
     var imageInput = document.getElementById('image');
     var image = imageInput.files[0];
   
-    /*if (!title || !description ) {
+    if (!title || !description ) {
       alert('Please fill in all fields');
       return;
-    }*/
+    }
   
     // Create an object for the new item
     var newItem = {

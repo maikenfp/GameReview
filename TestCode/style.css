@@ -9,6 +9,7 @@ body{
 
 .container {
     display: grid;
+    /*justify-content: center;*/
 }
 
 .header {
@@ -21,6 +22,8 @@ body{
     grid-row: 2;
     grid-column: 2/6;
     height: 90vh;
+    width: 1400px;
+    margin: auto;
 }
 
 .mainheader {
@@ -40,13 +43,19 @@ body{
     margin: 0 20px 0 auto;
     align-self: center;
 }
+
+#panelContainer{
+    display: flex;
+    flex-direction: column;
+}
+
 .panel {
     grid-row: 2;
     border: 1px solid black inset;
     border-radius: 15px;
     box-shadow: 2px 2px 2px 2px rgb(119, 119, 119);
-    padding: 80px;
-    margin: 10px 20px;
+    padding: 60px;
+    margin: 10px 50px;
     display: flex;
 }
 
@@ -68,7 +77,7 @@ body{
 .sidebar {
     grid-row: 2;
     grid-column: 1/2;
-    width: 100%;
+    width: 300px;
 }
 
 #addItemForm {
